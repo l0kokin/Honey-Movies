@@ -1,6 +1,5 @@
 /* *************** MAIN SECTION *************** */
-/* *********** SECTION ONE ********** */
-.section-one {
+.main-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
   max-width: 144rem;
@@ -141,31 +140,27 @@
   color: transparent;
 }
 
-/* ***************** SECTION TWO *************** */
-.section-two {
+/* ***************** HERO SECTION *************** */
+.hero-section {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
+  margin-left: 14rem;
 }
 
-/* ******** HERO SECTION ******** */
+/* ******** HERO ******** */
 .hero {
-  /* background-image: url(../images/Crown.png); */
   background-repeat: no-repeat;
   max-width: 77rem;
   overflow: hidden;
   position: relative;
 }
 
+/* *** CAROUSEL *** */
 .carousel {
   display: flex;
-  transition: transform 0.5s step-end;
-}
-
-.carousel-item {
-  flex: 0 0 100%;
-  text-align: center;
+  transition: transform 0.5s ease-in;
 }
 
 .carousel-item h1 {
@@ -178,8 +173,7 @@
   min-width: 70rem;
   opacity: 50%;
   border-radius: 2rem;
-  max-height: 30rem;
-  margin: auto;
+  max-height: 35rem;
 }
 
 .carousel-btn {
@@ -188,10 +182,7 @@
   transform: translateY(-50%);
   background: var(--transparent-white);
   color: var(--white);
-  border: none;
-  border-radius: 1.5rem;
-  cursor: pointer;
-  padding: 1.9rem 2.2rem;
+  padding: 1.3rem 2.2rem;
 }
 
 .btn-prev {
@@ -221,7 +212,7 @@
   background-color: rgba(249, 249, 249, 1);
   border-radius: 50%;
   display: inline-block;
-  margin: 0 5px;
+  margin: 0 0.5rem;
   cursor: pointer;
 }
 
@@ -230,14 +221,119 @@
 }
 
 /* ******** MOVIES SECTION ********* */
+.movies-section {
+  margin: 6rem 14rem;
+}
+
 .movies {
-  background-color: orange;
-  height: 237px;
+  margin-top: 3rem;
+  display: flex;
+  gap: 4.2rem;
+}
+
+.movie {
+  background-repeat: no-repeat;
+  min-width: 23.7rem;
+}
+
+.movie-1 {
+  background-image: url(../images/Loki.png);
+}
+
+.movie-2 {
+  background-image: url(../images/Chernobyl.png);
+}
+
+.movie-3 {
+  background-image: url(../images/Rick\ and\ Morty.png);
+}
+
+.movie-info {
+  display: flex;
+  justify-content: space-between;
+  bottom: 8.1rem;
+  left: 1rem;
+  margin: 10.7rem 1.4rem 1.4rem 1rem;
+}
+
+.movie-info p {
+  font-size: 1.8rem;
+  font-weight: var(--semi-bold);
+  color: var(--light-text);
+}
+
+.movie-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0 1rem 1rem 1rem;
+}
+
+.btn-plus {
+  padding: 2rem;
+  position: static;
+}
+
+.btn-moreinfo {
+  padding: 2rem 3rem;
+  position: static;
 }
 
 /* *************** TOP RATED MOVIES ************** */
 .top-rated {
+  margin: 17.2rem 0 4rem 14rem;
+}
+
+.top-rated-list {
+  display: flex;
+  margin-top: 5rem;
+}
+
+.top-rated-movie {
+  max-width: 30rem;
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+}
+
+.movie-img {
   width: 100%;
-  background-color: red;
-  height: 800px;
+  max-height: 40rem;
+}
+
+.movie-rating {
+  position: absolute;
+  top: -1rem;
+  right: -1rem;
+  background-color: var(--orange);
+  color: var(--black);
+  padding: 1.5rem 3rem 0.5rem 2rem;
+  font-size: 1.6rem;
+  border-radius: 15px;
+}
+
+.release-date {
+  margin-left: 2.1rem;
+  margin-top: 1rem;
+  font-size: 1.8rem;
+  font-weight: var(--semi-bold);
+  color: var(--light-text);
+}
+
+.plot {
+  margin-left: 2.1rem;
+  margin-top: 1.5rem;
+  font-size: 1.2rem;
+  font-weight: var(--normal);
+}
+
+.swiper {
+  display: flex;
+  justify-content: center;
+}
+
+#btnSwipe {
+  background-color: var(--black);
+  color: var(--white);
+  font-size: 1.6rem;
 }

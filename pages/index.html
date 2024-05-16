@@ -22,110 +22,186 @@
     <link rel="stylesheet" href="../styles/queries.css" />
   </head>
   <body>
-    <main>
-      <section class="section-one">
-        <aside class="navigation-container">
-          <div class="logo">
-            <img src="../images/logo.png" alt="honey movies logo" />
-            <p class="logo-text">Honey <br />movies</p>
+    <main class="main-section">
+      <aside class="navigation-container">
+        <div class="logo">
+          <img src="../images/logo.png" alt="honey movies logo" />
+          <p class="logo-text">Honey <br />movies</p>
+        </div>
+        <img
+          src="../images/honey comb.png"
+          alt="background image of honey comb"
+          class="honey-comb-img"
+        />
+        <nav class="navigation">
+          <div>
+            <p class="ul-title">Menu</p>
+            <ul>
+              <li><embed src="../icons/Home.svg" />Home</li>
+              <li><embed src="../icons/Discover.svg" />Discover</li>
+              <li><embed src="../icons/Award.svg" />Awards</li>
+              <li><embed src="../icons/Celebrities.svg" />Celebrities</li>
+            </ul>
           </div>
-          <img
-            src="../images/honey comb.png"
-            alt="background image of honey comb"
-            class="honey-comb-img"
-          />
-          <nav class="navigation">
-            <div>
-              <p class="ul-title">Menu</p>
-              <ul>
-                <li><embed src="../icons/Home.svg" />Home</li>
-                <li><embed src="../icons/Discover.svg" />Discover</li>
-                <li><embed src="../icons/Award.svg" />Awards</li>
-                <li><embed src="../icons/Celebrities.svg" />Celebrities</li>
-              </ul>
-            </div>
-            <div>
-              <p class="ul-title">Library</p>
-              <ul>
-                <li><embed src="../icons/Recent.svg" />Recent</li>
-                <li><embed src="../icons/Top Rated.svg" />Top Rated</li>
-                <li><embed src="../icons/Downloaded.svg" />Downloaded</li>
-                <li><embed src="../icons/Playlists.svg" />Playlists</li>
-                <li><embed src="../icons/Watchlist.svg" />Watchlist</li>
-                <li><embed src="../icons/Completed.svg" />Completed</li>
-              </ul>
-            </div>
-            <div>
-              <p class="ul-title">General</p>
-              <ul>
-                <li><embed src="../icons/Settings.svg" />Settings</li>
-                <li><embed src="../icons/Log Out.svg" />Log Out</li>
-              </ul>
-            </div>
+          <div>
+            <p class="ul-title">Library</p>
+            <ul>
+              <li><embed src="../icons/Recent.svg" />Recent</li>
+              <li><embed src="../icons/Top Rated.svg" />Top Rated</li>
+              <li><embed src="../icons/Downloaded.svg" />Downloaded</li>
+              <li><embed src="../icons/Playlists.svg" />Playlists</li>
+              <li><embed src="../icons/Watchlist.svg" />Watchlist</li>
+              <li><embed src="../icons/Completed.svg" />Completed</li>
+            </ul>
+          </div>
+          <div>
+            <p class="ul-title">General</p>
+            <ul>
+              <li><embed src="../icons/Settings.svg" />Settings</li>
+              <li><embed src="../icons/Log Out.svg" />Log Out</li>
+            </ul>
+          </div>
+        </nav>
+      </aside>
+      <section>
+        <header class="header">
+          <nav class="categories">
+            <ul>
+              <li>Movies</li>
+              <li>TV Shows</li>
+              <li>Anime</li>
+            </ul>
           </nav>
-        </aside>
-        <section>
-          <header class="header">
-            <nav class="categories">
-              <ul>
-                <li>Movies</li>
-                <li>TV Shows</li>
-                <li>Anime</li>
-              </ul>
-            </nav>
-            <div class="search-container">
-              <embed src="../icons/Search.svg" />
-              <input type="search" id="search-bar" placeholder=" Search" />
-              <embed src="../icons/Filter.svg" />
-            </div>
-          </header>
+          <div class="search-container">
+            <embed src="../icons/Search.svg" />
+            <input type="search" id="search-bar" placeholder=" Search" />
+            <embed src="../icons/Filter.svg" />
+          </div>
+        </header>
 
-          <section class="section-two">
-            <div class="hero">
-              <div class="carousel">
-                <div class="carousel-item">
-                  <img
-                    src="../images/crown background.jpeg"
-                    alt="The queen and her two sons are looking in the distance"
-                    class="carousel-img"
-                  />
-                  <h1 class="title">The Crown</h1>
-                  <button class="btn btn-white">&#x2b; Watchlist</button>
-                  <button class="btn btn-yellow">Watch Now</button>
-                </div>
-                <div class="carousel-item">
-                  <img
-                    src="../images/loki background.jpg"
-                    alt="Image 2"
-                    class="carousel-img"
-                  />
-                  <h1 class="title">Loki</h1>
-                </div>
-                <div class="carousel-item">
-                  <img
-                    src="../images/rick and morty background.jpg"
-                    alt="Image 3"
-                    class="carousel-img"
-                  />
-                  <h1 class="title">Rick and Morty</h1>
-                </div>
+        <section class="hero-section">
+          <div class="hero">
+            <div class="carousel">
+              <div class="carousel-item">
+                <img
+                  src="../images/crown background.jpeg"
+                  alt="The queen and her two sons are looking in the distance"
+                  class="carousel-img"
+                />
+                <h1 class="title">The Crown</h1>
+                <button class="btn btn-white">
+                  <embed src="../icons/Plus.svg" /> Watchlist
+                </button>
+                <button class="btn btn-yellow">Watch Now</button>
               </div>
-              <button class="carousel-btn btn-prev">&#10094;</button>
-              <button class="carousel-btn btn-next">&#10095;</button>
-              <div class="carousel-dots">
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
+              <div class="carousel-item">
+                <img
+                  src="../images/loki background.jpg"
+                  alt="Loki and two other characters looking at the camera"
+                  class="carousel-img"
+                />
+                <h1 class="title">Loki</h1>
+                <button class="btn btn-white">
+                  <embed src="../icons/Plus.svg" /> Watchlist
+                </button>
+                <button class="btn btn-yellow">Watch Now</button>
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="../images/rick and morty background.jpg"
+                  alt="Shadows of Rick and Morty are walking on a colorful backgroud"
+                  class="carousel-img"
+                />
+                <h1 class="title">Rick and Morty</h1>
+                <button class="btn btn-white">
+                  <embed src="../icons/Plus.svg" /> Watchlist
+                </button>
+                <button class="btn btn-yellow">Watch Now</button>
               </div>
             </div>
-          </section>
-          <div class="movies"></div>
+            <button class="btn carousel-btn btn-prev">&#10094;</button>
+            <button class="btn carousel-btn btn-next">&#10095;</button>
+            <div class="carousel-dots">
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+            </div>
+          </div>
+        </section>
+
+        <section class="movies-section">
+          <h1 class="title-secondary">Movies</h1>
+          <div class="movies">
+            <div class="movie movie-1">
+              <h2 class="movie-title">Loki</h2>
+              <img
+                src="../images/Review 4.5.png"
+                alt="4.5 star review"
+                class="stars"
+              />
+              <div class="movie-info">
+                <p>6 Ep</p>
+                <p>Superhero</p>
+              </div>
+              <div class="movie-buttons">
+                <button class="btn btn-white btn-plus">
+                  <embed src="../icons/Plus.svg" />
+                </button>
+                <button class="btn btn-yellow btn-moreinfo">More Info</button>
+              </div>
+            </div>
+
+            <div class="movie movie-2">
+              <h2 class="movie-title">Chernobyl</h2>
+              <img
+                src="../images/Review 5.png"
+                alt="5 star review"
+                class="stars"
+              />
+              <div class="movie-info">
+                <p>5 Ep</p>
+                <p>Mini Series</p>
+              </div>
+              <div class="movie-buttons">
+                <button class="btn btn-white btn-plus">
+                  <embed src="../icons/Plus.svg" />
+                </button>
+                <button class="btn btn-yellow btn-moreinfo">More Info</button>
+              </div>
+            </div>
+
+            <div class="movie movie-3">
+              <h2 class="movie-title">Rick and Morty</h2>
+              <img
+                src="../images/Review 5.png"
+                alt="5 star review"
+                class="stars"
+              />
+              <div class="movie-info">
+                <p>49 Ep</p>
+                <p>Fantasy</p>
+              </div>
+              <div class="movie-buttons">
+                <button class="btn btn-white btn-plus">
+                  <embed src="../icons/Plus.svg" />
+                </button>
+                <button class="btn btn-yellow btn-moreinfo">More Info</button>
+              </div>
+            </div>
+          </div>
         </section>
       </section>
-      <section class="top-rated"></section>
     </main>
 
-    <footer></footer>
+    <section class="top-rated">
+      <h1 class="title">Top Rated Movies</h1>
+      <div class="top-rated-list"></div>
+      <div class="swiper">
+        <button id="btnSwipe">Swipe &#10095;</button>
+      </div>
+    </section>
+
+    <footer>2024. All rights recerved, developed by Sali Gogishvili</footer>
 
     <script src="../script.js"></script>
   </body>

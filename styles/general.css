@@ -17,6 +17,7 @@
   --light-white: rgba(249, 249, 249, 0.67);
   --transparent-white: rgba(249, 249, 249, 0.2);
   --dark-blue: rgba(33, 36, 45, 1);
+  --light-text: rgba(249, 249, 249, 0.7);
 
   /* font weight */
   --light: 500;
@@ -45,25 +46,61 @@ body {
   font-weight: var(--bold);
 }
 
+.title-secondary {
+  font-size: 3rem;
+  font-weight: var(--bold);
+}
+
 button {
   cursor: pointer;
+  border: none;
+  box-shadow: none;
 }
 
 .btn {
   font-size: 18px;
   font-weight: var(--bold);
-  padding: 1.9rem 4.7rem;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  white-space: nowrap;
 }
 
 .btn-yellow {
   background-color: var(--orange);
   color: var(--black);
+  padding: 1.9rem 4.7rem;
   position: absolute;
-  bottom: -2rem;
-  left: -4rem;
+  bottom: 2rem;
+  right: 3%;
 }
 
 .btn-white {
   background-color: var(--transparent-white);
   color: var(--white);
+  padding: 1.9rem 2.5rem;
+  position: absolute;
+  bottom: 2rem;
+  left: 3%;
+}
+
+.movie-title {
+  font-size: 24px;
+  font-weight: var(--bold);
+  margin: 2.1rem 0 1.2rem 2.1rem;
+}
+
+.stars {
+  margin-left: 2.1rem;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Luckiest Guy", Arial, Helvetica, sans-serif;
+  font-size: 3.2rem;
+  color: var(--orange);
+  margin: 3.9rem 0 7.5rem 0;
 }
