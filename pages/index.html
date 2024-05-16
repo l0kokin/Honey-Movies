@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Honey Movies</title>
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Luckiest+Guy&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- styles -->
+    <link rel="stylesheet" href="../styles/general.css" />
+    <link rel="stylesheet" href="../styles/styles.css" />
+    <link rel="stylesheet" href="../styles/queries.css" />
+  </head>
+  <body>
+    <main>
+      <section class="section-one">
+        <aside class="navigation-container">
+          <div class="logo">
+            <img src="../images/logo.png" alt="honey movies logo" />
+            <p class="logo-text">Honey <br />movies</p>
+          </div>
+          <img
+            src="../images/honey comb.png"
+            alt="background image of honey comb"
+            class="honey-comb-img"
+          />
+          <nav class="navigation">
+            <div>
+              <p class="ul-title">Menu</p>
+              <ul>
+                <li><embed src="../icons/Home.svg" />Home</li>
+                <li><embed src="../icons/Discover.svg" />Discover</li>
+                <li><embed src="../icons/Award.svg" />Awards</li>
+                <li><embed src="../icons/Celebrities.svg" />Celebrities</li>
+              </ul>
+            </div>
+            <div>
+              <p class="ul-title">Library</p>
+              <ul>
+                <li><embed src="../icons/Recent.svg" />Recent</li>
+                <li><embed src="../icons/Top Rated.svg" />Top Rated</li>
+                <li><embed src="../icons/Downloaded.svg" />Downloaded</li>
+                <li><embed src="../icons/Playlists.svg" />Playlists</li>
+                <li><embed src="../icons/Watchlist.svg" />Watchlist</li>
+                <li><embed src="../icons/Completed.svg" />Completed</li>
+              </ul>
+            </div>
+            <div>
+              <p class="ul-title">General</p>
+              <ul>
+                <li><embed src="../icons/Settings.svg" />Settings</li>
+                <li><embed src="../icons/Log Out.svg" />Log Out</li>
+              </ul>
+            </div>
+          </nav>
+        </aside>
+        <section>
+          <header class="header">
+            <nav class="categories">
+              <ul>
+                <li>Movies</li>
+                <li>TV Shows</li>
+                <li>Anime</li>
+              </ul>
+            </nav>
+            <div class="search-container">
+              <embed src="../icons/Search.svg" />
+              <input type="search" id="search-bar" placeholder=" Search" />
+              <embed src="../icons/Filter.svg" />
+            </div>
+          </header>
+
+          <section class="section-two">
+            <div class="hero">
+              <div class="carousel">
+                <div class="carousel-item">
+                  <img
+                    src="../images/crown background.jpeg"
+                    alt="The queen and her two sons are looking in the distance"
+                    class="carousel-img"
+                  />
+                  <h1 class="title">The Crown</h1>
+                  <button class="btn btn-white">&#x2b; Watchlist</button>
+                  <button class="btn btn-yellow">Watch Now</button>
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="../images/loki background.jpg"
+                    alt="Image 2"
+                    class="carousel-img"
+                  />
+                  <h1 class="title">Loki</h1>
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="../images/rick and morty background.jpg"
+                    alt="Image 3"
+                    class="carousel-img"
+                  />
+                  <h1 class="title">Rick and Morty</h1>
+                </div>
+              </div>
+              <button class="carousel-btn btn-prev">&#10094;</button>
+              <button class="carousel-btn btn-next">&#10095;</button>
+              <div class="carousel-dots">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+              </div>
+            </div>
+          </section>
+          <div class="movies"></div>
+        </section>
+      </section>
+      <section class="top-rated"></section>
+    </main>
+
+    <footer></footer>
+
+    <script src="../script.js"></script>
+  </body>
+</html>

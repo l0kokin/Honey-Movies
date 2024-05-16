@@ -1,0 +1,243 @@
+/* *************** MAIN SECTION *************** */
+/* *********** SECTION ONE ********** */
+.section-one {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 144rem;
+}
+
+/* ************* ASIDE ************* */
+.logo {
+  display: flex;
+}
+
+.logo-text {
+  font-family: "Luckiest Guy", Arial, Helvetica, sans-serif;
+  font-size: 3.2rem;
+  font-weight: 400;
+  color: var(--orange);
+}
+
+.honey-comb-img {
+  width: 69.4rem;
+  position: absolute;
+  left: -10.5rem;
+  z-index: -1;
+}
+
+/* *** NAVIGATION ON THE LEFT *** */
+.navigation-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  margin: 6.1rem 10.5rem;
+  position: relative;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 5.9rem;
+  padding-left: 3.8rem;
+  z-index: 100;
+}
+
+.navigation p {
+  font-size: 1.8rem;
+  font-weight: var(--semi-bold);
+  line-height: 2.16rem;
+  margin-bottom: 2.5rem;
+  color: var(--light-white);
+}
+
+.navigation ul {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.navigation ul li {
+  display: flex;
+  align-items: center;
+  font-size: 1.8rem;
+  gap: 1.5rem;
+  width: 21rem;
+  border: 0.2rem solid transparent;
+
+  embed {
+    width: 2.4rem;
+  }
+}
+
+.navigation ul li:hover,
+.navigation ul li:active {
+  color: var(--orange);
+  border-right: 0.2rem solid var(--orange);
+  transition: all 0.3s;
+}
+
+.categories {
+  display: flex;
+  justify-content: space-between;
+}
+
+.categories ul {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  list-style: none;
+}
+
+.categories li {
+  font-size: 2.4rem;
+}
+
+/* *** HEADER *** */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 10rem;
+  margin: 6.1rem 10.5rem;
+}
+
+.categories ul li {
+  padding: 2rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.categories ul li:hover,
+.categories ul li:active {
+  color: var(--orange) !important;
+  box-shadow: 0 6px 0 -3px var(--orange);
+}
+
+.search-container {
+  background-color: var(--dark-blue);
+  border: 0.2rem solid transparent;
+  border-radius: 12px;
+  padding: 1.6rem 2.5rem;
+  display: flex;
+  align-items: center;
+}
+
+#search-bar {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  border: none;
+  padding: 0;
+  margin-left: 1.5rem;
+  background-color: var(--dark-blue);
+  color: rgba(249, 249, 249, 0.67);
+  box-shadow: none;
+  font-family: "Lato", sans-serif;
+  font-size: 1.8rem;
+  font-weight: var(--light);
+}
+
+#search-bar:focus::placeholder {
+  color: transparent;
+}
+
+/* ***************** SECTION TWO *************** */
+.section-two {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ******** HERO SECTION ******** */
+.hero {
+  /* background-image: url(../images/Crown.png); */
+  background-repeat: no-repeat;
+  max-width: 77rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel {
+  display: flex;
+  transition: transform 0.5s step-end;
+}
+
+.carousel-item {
+  flex: 0 0 100%;
+  text-align: center;
+}
+
+.carousel-item h1 {
+  position: absolute;
+  top: 4rem;
+  left: 4rem;
+}
+
+.carousel-img {
+  min-width: 70rem;
+  opacity: 50%;
+  border-radius: 2rem;
+  max-height: 30rem;
+  margin: auto;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--transparent-white);
+  color: var(--white);
+  border: none;
+  border-radius: 1.5rem;
+  cursor: pointer;
+  padding: 1.9rem 2.2rem;
+}
+
+.btn-prev {
+  left: 0;
+  margin-left: 2rem;
+}
+
+.btn-next {
+  right: 0;
+  margin-right: 2rem;
+}
+
+.carousel-dots {
+  text-align: center;
+  padding: 0.8rem;
+  position: absolute;
+  bottom: 3.6rem;
+  border-radius: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--transparent-white);
+}
+
+.dot {
+  height: 1rem;
+  width: 1rem;
+  background-color: rgba(249, 249, 249, 1);
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.dot.active {
+  background-color: var(--orange);
+}
+
+/* ******** MOVIES SECTION ********* */
+.movies {
+  background-color: orange;
+  height: 237px;
+}
+
+/* *************** TOP RATED MOVIES ************** */
+.top-rated {
+  width: 100%;
+  background-color: red;
+  height: 800px;
+}

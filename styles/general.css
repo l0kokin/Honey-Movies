@@ -1,0 +1,69 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(249, 249, 249, 0.1);
+}
+
+:root {
+  /* colors */
+  --orange: #f8b319;
+  --black: #000000;
+  --white: #f9f9f9;
+  --light-white: rgba(249, 249, 249, 0.67);
+  --transparent-white: rgba(249, 249, 249, 0.2);
+  --dark-blue: rgba(33, 36, 45, 1);
+
+  /* font weight */
+  --light: 500;
+  --normal: 600;
+  --semi-bold: 700;
+  --bold: 800;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  background-color: #000;
+  color: var(--white);
+  overflow-x: hidden;
+  line-height: 1;
+  font-weight: var(--normal);
+}
+
+.title {
+  font-size: 4.8rem;
+  font-weight: var(--bold);
+}
+
+button {
+  cursor: pointer;
+}
+
+.btn {
+  font-size: 18px;
+  font-weight: var(--bold);
+  padding: 1.9rem 4.7rem;
+}
+
+.btn-yellow {
+  background-color: var(--orange);
+  color: var(--black);
+  position: absolute;
+  bottom: -2rem;
+  left: -4rem;
+}
+
+.btn-white {
+  background-color: var(--transparent-white);
+  color: var(--white);
+}
