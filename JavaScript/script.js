@@ -71,6 +71,7 @@ const BASE_URL = "https://api.themoviedb.org";
 const IMG_BASE_URL = "https://image.tmdb.org/t/p/w500";
 const SEARCH_API_KEY = 278130;
 const topRatedList = document.querySelector(".top-rated-list");
+const btnSwipe = document.getElementById("btnSwipe");
 
 // trimming the plot overviews that are too long
 function trimString(string) {
@@ -96,27 +97,35 @@ async function fetchData() {
     const result = await fetch(`${BASE_URL}/3/discover/movie`, options);
     const data = await result.json();
 
-    data.results.forEach((movie) => {
-      const movieCard = document.createElement("div");
-      movieCard.classList.add("top-rated-movie");
-      movieCard.innerHTML = `
-      <img src="${IMG_BASE_URL}${movie.poster_path}" alt="${
-        movie.title
-      }" class="movie-img" />
-      <div class="movie-rating">${Number(movie.vote_average.toFixed(1))}</div>
-      <h2 class="movie-title">${movie.title}</h2>
-      <img src="../images/Review 4.5.png" alt="Rating 4.5" class="stars" />
-      <p class="release-date">${movie.release_date}</p>
-      <p class="plot">${trimString(movie.overview)}</p>
-      `;
-      topRatedList.appendChild(movieCard);
-    });
+    let currentIndex = 0;
+    const itemsPerPage = 3;
+    const totalItems = data.results.length;
+
+    function displayMovies(startIndex, endIndex) {
+      topRatedList.innerHTML = "";
+      const movieList = data.results.slice(startIndex, endIndex);
+
+      movieList.forEach((movie) => {
+        const movieCard = document.createElement("div");
+        movieCard.classList.add("top-rated-movie");
+        movieCard.innerHTML = `
+        <img src="${IMG_BASE_URL}${movie.poster_path}" alt="${
+          movie.title
+        }" class="movie-img" />
+        <div class="movie-rating">${Number(movie.vote_average.toFixed(1))}</div>
+        <h2 class="movie-title">${movie.title}</h2>
+        <img src="../images/Review 4.5.png" alt="Rating 4.5" class="stars" />
+        <p class="release-date">${movie.release_date}</p>
+        <p class="plot">${trimString(movie.overview)}</p>
+        `;
+        topRatedList.appendChild(movieCard);
+      });
+    }
+
+    displayMovies(currentIndex, itemsPerPage);
   } catch (error) {
     console.log(`Error fetching data: ${error}`);
   }
 }
 
 fetchData();
-
-// ////////// SWIPER IN FEATURED MOVIES //////////
-const btnSwipe = document.getElementById("btnSwipe");
