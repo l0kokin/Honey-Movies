@@ -1,4 +1,4 @@
-// ////////////////// FETCHING THE DATA FOR FEATURED SECTION ///////////////////
+// ////////////////// FETCHING THE DATA FOR FEATURED MOVIE LIST ///////////////////
 const FEATURED_API_KEY =
   "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0YzE3YjQ4YjFmMzFkZWNlMDI5N2JkZGQ1ZGM4YmMwZCIsInN1YiI6IjY2NDYyM2Y2Y2VlNWFiOTBhYTJkYjc3OCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.ElAPr5z_O7njtzfAJLXeQiPcsjlcVS6xbWYCdAPcTms";
 const BASE_URL = "https://api.themoviedb.org";
