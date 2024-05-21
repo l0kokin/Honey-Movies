@@ -150,7 +150,7 @@
 }
 
 .search-result-list {
-  width: 16%;
+  width: 31.5rem;
   height: fit-content;
   display: none;
   flex-direction: column;
@@ -159,7 +159,7 @@
   padding: 1rem;
   z-index: 100000;
   position: absolute;
-  top: 16%;
+  top: 14rem;
 }
 
 .search-result {
@@ -244,7 +244,7 @@
 
 .btn-next {
   right: 0;
-  margin-right: 2rem;
+  margin-right: 8.7rem;
 }
 
 .carousel-dots {
@@ -253,7 +253,7 @@
   position: absolute;
   bottom: 3.6rem;
   border-radius: 5px;
-  left: 50%;
+  left: 45%;
   transform: translateX(-50%);
   background-color: var(--transparent-white);
 }
@@ -424,6 +424,37 @@
 
 /* ********************** MOVIES INNER PAGE *********************** */
 .movies-inner--body {
-  /* background-image: url("../images/loki\ background.jpg");
-  background-repeat: no-repeat; */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.33), rgba(0, 0, 0, 0.8)),
+    url("../images/loki background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.33);
+}
+
+.movie-inner {
+  position: relative;
+  padding: 9.5rem;
+  display: flex;
+}
+
+.movie-inner--info {
+  display: flex;
+  flex-direction: column;
+  gap: 2.6rem;
+}
+
+.movie-inner--plot {
+  font-size: 30px;
+  font-weight: var(--normal);
+  width: 40%;
+}
+
+.movie-inner--buttons {
+  display: flex;
+  gap: 4.5rem;
+}
+
+.btn-inner {
+  position: static;
 }

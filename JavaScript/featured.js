@@ -16,6 +16,10 @@ function trimString(string) {
   return string;
 }
 
+function movieCardCLickHandler() {
+  window.location.replace("http://127.0.0.1:5500/pages/movieInner.html");
+}
+
 async function fetchData() {
   try {
     const options = {
@@ -50,6 +54,9 @@ async function fetchData() {
         <p class="release-date">${movie.release_date}</p>
         <p class="plot">${trimString(movie.overview)}</p>
         `;
+
+        movieCard.addEventListener("click", movieCardCLickHandler);
+
         topRatedList.appendChild(movieCard);
       });
     }

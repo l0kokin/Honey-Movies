@@ -71,6 +71,7 @@ const BASE_URL = "https://api.themoviedb.org";
 const IMG_BASE_URL = "https://image.tmdb.org/t/p/w500";
 const topRatedList = document.querySelector(".top-rated-list");
 const btnSwipe = document.getElementById("btnSwipe");
+let movieList = [];
 
 // trimming the plot overviews that are too long
 function trimString(string) {
@@ -79,6 +80,33 @@ function trimString(string) {
     return words.slice(0, 15).join(" ") + "...";
   }
   return string;
+}
+
+function movieCardCLickHandler() {
+  window.location.replace("http://127.0.0.1:5500/pages/movieInner.html");
+}
+
+function displayMovies(movies) {
+  topRatedList.innerHTML = "";
+  movies.forEach((movie) => {
+    const movieCard = document.createElement("div");
+    movieCard.classList.add("top-rated-movie");
+    movieCard.classList.add("movie-card");
+    movieCard.innerHTML = `
+    <img src="${IMG_BASE_URL}${movie.poster_path}" alt="${
+      movie.title
+    }" class="movie-img" />
+    <div class="movie-rating">${Number(movie.vote_average.toFixed(1))}</div>
+    <h2 class="movie-title">${movie.title}</h2>
+    <img src="../images/Review 4.5.png" alt="Rating 4.5" class="stars" />
+    <p class="release-date">${movie.release_date}</p>
+    <p class="plot">${trimString(movie.overview)}</p>
+    `;
+
+    movieCard.addEventListener("click", movieCardCLickHandler);
+
+    topRatedList.appendChild(movieCard);
+  });
 }
 
 async function fetchData() {
@@ -97,33 +125,13 @@ async function fetchData() {
     const sortedMovies = data.results.sort(
       (a, b) => b.vote_average - a.vote_average
     );
+
     const top3Movies = sortedMovies.slice(0, 3);
-
-    function displayMovies(movies) {
-      topRatedList.innerHTML = "";
-      movies.forEach((movie) => {
-        const movieCard = document.createElement("div");
-        movieCard.classList.add("top-rated-movie");
-        movieCard.innerHTML = `
-        <img src="${IMG_BASE_URL}${movie.poster_path}" alt="${
-          movie.title
-        }" class="movie-img" />
-        <div class="movie-rating">${Number(movie.vote_average.toFixed(1))}</div>
-        <h2 class="movie-title">${movie.title}</h2>
-        <img src="../images/Review 4.5.png" alt="Rating 4.5" class="stars" />
-        <p class="release-date">${movie.release_date}</p>
-        <p class="plot">${trimString(movie.overview)}</p>
-        `;
-        topRatedList.appendChild(movieCard);
-      });
-    }
-
     displayMovies(top3Movies);
   } catch (error) {
     console.log(`Error fetching data: ${error}`);
   }
 }
-
 fetchData();
 
 // ///////////////////// SEARCH FUNCTIONALITY ///////////////
@@ -161,6 +169,7 @@ document.addEventListener("DOMContentLoaded", function () {
       filteredMovies.forEach((movie) => {
         const movieCard = document.createElement("div");
         movieCard.classList.add("search-result");
+        movieCard.classList.add("movie-card");
         movieCard.innerHTML = `
         <img src="${movie.Poster}" alt="${movie.Title}" />
         <div class="search-result-info">
@@ -168,6 +177,9 @@ document.addEventListener("DOMContentLoaded", function () {
           <p class="search-result--date">${movie.Year}</p>
         </div>
       `;
+
+        movieCard.addEventListener("click", movieCardCLickHandler);
+
         searchResultList.appendChild(movieCard);
       });
     }
@@ -175,12 +187,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   searchBar.addEventListener("input", function () {
     const searchTerm = searchBar.value.toLowerCase();
-    // filteredMovies = results.filter((result) =>
-    //   result.Title.toLowerCase().includes(searchTerm)
-    // );
 
     searchMovies(searchTerm);
-
     displayMovies();
   });
 });
