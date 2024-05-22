@@ -68,6 +68,13 @@ showSlide(currentSlide);
 const FEATURED_API_KEY =
   "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0YzE3YjQ4YjFmMzFkZWNlMDI5N2JkZGQ1ZGM4YmMwZCIsInN1YiI6IjY2NDYyM2Y2Y2VlNWFiOTBhYTJkYjc3OCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.ElAPr5z_O7njtzfAJLXeQiPcsjlcVS6xbWYCdAPcTms";
 const BASE_URL = "https://api.themoviedb.org";
+const options = {
+  method: "GET",
+  headers: {
+    accept: "application/json",
+    Authorization: `Bearer ${FEATURED_API_KEY}`,
+  },
+};
 const IMG_BASE_URL = "https://image.tmdb.org/t/p/w500";
 const topRatedList = document.querySelector(".top-rated-list");
 const btnSwipe = document.getElementById("btnSwipe");
@@ -82,8 +89,10 @@ function trimString(string) {
   return string;
 }
 
-function movieCardCLickHandler() {
-  window.location.replace("http://127.0.0.1:5500/pages/movieInner.html");
+function movieCardCLickHandler(id) {
+  window.location.replace(
+    `http://127.0.0.1:5500/pages/movieInner.html?id=${id}`
+  );
 }
 
 function displayMovies(movies) {
@@ -98,12 +107,12 @@ function displayMovies(movies) {
     }" class="movie-img" />
     <div class="movie-rating">${Number(movie.vote_average.toFixed(1))}</div>
     <h2 class="movie-title">${movie.title}</h2>
-    <img src="../images/Review 4.5.png" alt="Rating 4.5" class="stars" />
+    <img src="../images/Review 5.png" alt="Rating 5" class="stars" />
     <p class="release-date">${movie.release_date}</p>
     <p class="plot">${trimString(movie.overview)}</p>
     `;
 
-    movieCard.addEventListener("click", movieCardCLickHandler);
+    movieCard.addEventListener("click", () => movieCardCLickHandler(movie.id));
 
     topRatedList.appendChild(movieCard);
   });
@@ -111,22 +120,10 @@ function displayMovies(movies) {
 
 async function fetchData() {
   try {
-    const options = {
-      method: "GET",
-      headers: {
-        accept: "application/json",
-        Authorization: `Bearer ${FEATURED_API_KEY}`,
-      },
-    };
-
-    const result = await fetch(`${BASE_URL}/3/discover/movie`, options);
+    const result = await fetch(`${BASE_URL}/3/movie/top_rated`, options);
     const data = await result.json();
 
-    const sortedMovies = data.results.sort(
-      (a, b) => b.vote_average - a.vote_average
-    );
-
-    const top3Movies = sortedMovies.slice(0, 3);
+    const top3Movies = data.results.slice(0, 3);
     displayMovies(top3Movies);
   } catch (error) {
     console.log(`Error fetching data: ${error}`);
@@ -135,7 +132,6 @@ async function fetchData() {
 fetchData();
 
 // ///////////////////// SEARCH FUNCTIONALITY ///////////////
-const SEARCH_API_KEY = "278130";
 const searchBar = document.getElementById("search-bar");
 const searchResultList = document.querySelector(".search-result-list");
 
@@ -145,13 +141,20 @@ document.addEventListener("DOMContentLoaded", function () {
   async function searchMovies(searchTerm) {
     try {
       const response = await fetch(
-        `http://www.omdbapi.com/?apikey=${SEARCH_API_KEY}&s=${searchTerm}`
+        `${BASE_URL}/3/search/multi?query=${searchTerm}&include_adult=false&language=en-US&page=1`,
+        options
       );
       const data = await response.json();
-      filteredMovies = data.Search || [];
+      filteredMovies = data.results || [];
     } catch (error) {
       console.log(`Error fetching data: ${error}`);
     }
+  }
+
+  function extractYear(dateString) {
+    if (!dateString) return "Unknown date";
+    const date = new Date(dateString);
+    return isNaN(date.getFullYear()) ? "Unknown date" : date.getFullYear();
   }
 
   function displayMovies() {
@@ -170,15 +173,24 @@ document.addEventListener("DOMContentLoaded", function () {
         const movieCard = document.createElement("div");
         movieCard.classList.add("search-result");
         movieCard.classList.add("movie-card");
+        const releaseYear = extractYear(
+          movie.release_date || movie.first_air_date
+        );
         movieCard.innerHTML = `
-        <img src="${movie.Poster}" alt="${movie.Title}" />
+        <img src="${
+          movie.poster_path
+            ? IMG_BASE_URL + movie.poster_path
+            : "placeholder-image-url"
+        }" alt="${movie.title || movie.name}" alt="${movie.name}" />
         <div class="search-result-info">
-          <h3 class="search-result--title">${movie.Title}</h3>
-          <p class="search-result--date">${movie.Year}</p>
+          <h3 class="search-result--title">${movie.title || movie.name}</h3>
+          <p class="search-result--date">${releaseYear}</p>
         </div>
       `;
 
-        movieCard.addEventListener("click", movieCardCLickHandler);
+        movieCard.addEventListener("click", () =>
+          movieCardCLickHandler(movie.id)
+        );
 
         searchResultList.appendChild(movieCard);
       });

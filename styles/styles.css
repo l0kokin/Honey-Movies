@@ -424,30 +424,45 @@
 
 /* ********************** MOVIES INNER PAGE *********************** */
 .movies-inner--body {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.33), rgba(0, 0, 0, 0.8)),
-    url("../images/loki background.jpg");
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.33), rgba(0, 0, 0, 0.8)),
+    url("../images/loki background.jpg"); */
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
-  background-color: rgba(255, 255, 255, 0.33);
+  font-family: "Lato", sans-serif;
 }
 
 .movie-inner {
   position: relative;
   padding: 9.5rem;
   display: flex;
+  justify-content: space-between;
+}
+
+.movie-inner--title {
+  font-size: 6.8rem;
+  font-weight: var(--bold);
+  line-height: 8.16rem;
 }
 
 .movie-inner--info {
   display: flex;
   flex-direction: column;
   gap: 2.6rem;
+  justify-content: center;
+}
+
+.movie-inner--views {
+  font-size: 2.5rem;
+  font-weight: var(--normal);
+  line-height: 3rem;
 }
 
 .movie-inner--plot {
-  font-size: 30px;
+  font-size: 3rem;
   font-weight: var(--normal);
-  width: 40%;
+  line-height: 3.6rem;
+  width: 80%;
 }
 
 .movie-inner--buttons {
@@ -457,4 +472,9 @@
 
 .btn-inner {
   position: static;
+}
+
+.movie-inner--image {
+  max-width: 45rem;
+  border-radius: 2rem;
 }

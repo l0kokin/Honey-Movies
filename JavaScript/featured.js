@@ -3,7 +3,6 @@ const FEATURED_API_KEY =
   "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0YzE3YjQ4YjFmMzFkZWNlMDI5N2JkZGQ1ZGM4YmMwZCIsInN1YiI6IjY2NDYyM2Y2Y2VlNWFiOTBhYTJkYjc3OCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.ElAPr5z_O7njtzfAJLXeQiPcsjlcVS6xbWYCdAPcTms";
 const BASE_URL = "https://api.themoviedb.org";
 const IMG_BASE_URL = "https://image.tmdb.org/t/p/w500";
-const SEARCH_API_KEY = 278130;
 const topRatedList = document.querySelector(".top-rated-list");
 const btnSwipe = document.getElementById("btnSwipe");
 
@@ -16,8 +15,10 @@ function trimString(string) {
   return string;
 }
 
-function movieCardCLickHandler() {
-  window.location.replace("http://127.0.0.1:5500/pages/movieInner.html");
+function movieCardCLickHandler(id) {
+  window.location.replace(
+    `http://127.0.0.1:5500/pages/movieInner.html?id=${id}`
+  );
 }
 
 async function fetchData() {
@@ -30,7 +31,7 @@ async function fetchData() {
       },
     };
 
-    const result = await fetch(`${BASE_URL}/3/discover/movie`, options);
+    const result = await fetch(`${BASE_URL}/3/movie/top_rated`, options);
     const data = await result.json();
 
     let currentIndex = 0;
@@ -54,8 +55,10 @@ async function fetchData() {
         <p class="release-date">${movie.release_date}</p>
         <p class="plot">${trimString(movie.overview)}</p>
         `;
-
-        movieCard.addEventListener("click", movieCardCLickHandler);
+        console.log(data);
+        movieCard.addEventListener("click", () =>
+          movieCardCLickHandler(movie.id)
+        );
 
         topRatedList.appendChild(movieCard);
       });
