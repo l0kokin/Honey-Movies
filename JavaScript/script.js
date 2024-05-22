@@ -91,7 +91,7 @@ function trimString(string) {
 
 function movieCardCLickHandler(id) {
   window.location.replace(
-    `http://127.0.0.1:5500/pages/movieInner.html?id=${id}`
+    `https://honey-movies.vercel.app/pages/movieInner.html?id=${id}`
   );
 }
 
