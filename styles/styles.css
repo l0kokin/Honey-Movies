@@ -10,6 +10,10 @@
   display: flex;
 }
 
+.logo-header {
+  display: none;
+}
+
 .logo-text {
   font-family: "Luckiest Guy", Arial, Helvetica, sans-serif;
   font-size: 3.2rem;
@@ -112,11 +116,16 @@
   box-shadow: 0 6px 0 -3px var(--orange);
 }
 
+.burger-menu {
+  display: none;
+}
+
 /* *** SEARCH *** */
 .search-container {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  width: fit-content;
 }
 
 .search-box {
@@ -284,8 +293,10 @@
 }
 
 .movie {
+  background-size: cover;
   background-repeat: no-repeat;
   min-width: 23.7rem;
+  border-radius: 20px;
 }
 
 .movie-1 {
@@ -302,10 +313,8 @@
 
 .movie-info {
   display: flex;
-  justify-content: space-between;
-  bottom: 8.1rem;
-  left: 1rem;
-  margin: 10.7rem 1.4rem 1.4rem 1rem;
+  justify-content: space-around;
+  margin: 10.7rem 1.4rem 1.4rem;
 }
 
 .movie-info p {
@@ -424,8 +433,6 @@
 
 /* ********************** MOVIES INNER PAGE *********************** */
 .movies-inner--body {
-  /* background-image: linear-gradient(rgba(0, 0, 0, 0.33), rgba(0, 0, 0, 0.8)),
-    url("../images/loki background.jpg"); */
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;

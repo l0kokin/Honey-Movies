@@ -27,7 +27,7 @@
 }
 
 html {
-  font-size: 62.5%;
+  /* font-size: 62.5%; */
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
@@ -39,6 +39,10 @@ body {
   overflow-x: hidden;
   line-height: 1;
   font-weight: var(--normal);
+}
+
+.hidden {
+  display: none;
 }
 
 .title {
@@ -58,7 +62,7 @@ button {
 }
 
 .btn {
-  font-size: 18px;
+  font-size: 1.8rem;
   font-weight: var(--bold);
   border-radius: 15px;
   display: flex;
@@ -86,7 +90,7 @@ button {
 }
 
 .movie-title {
-  font-size: 24px;
+  font-size: 2.4rem;
   font-weight: var(--bold);
   margin: 2.1rem 0 1.2rem 2.1rem;
 }

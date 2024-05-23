@@ -1,0 +1,91 @@
+/* 1rem = 1em = 16px */
+
+/* BELOW 1920px */
+@media (max-width: 120em) {
+  html {
+    /* 12px */
+    font-size: 75%;
+  }
+}
+
+/* BELOW 1680px */
+@media (max-width: 105em) {
+  html {
+    /* 10px */
+    font-size: 62.5%;
+  }
+}
+
+/* BELOW 1392px */
+@media (max-width: 87em) {
+  html {
+    /* 9px */
+    font-size: 56.25%;
+  }
+}
+
+/* BELOW 1248px */
+@media (max-width: 78em) {
+  html {
+    /* 8px */
+    font-size: 50%;
+  }
+
+  .movie {
+    max-width: 20rem;
+  }
+}
+
+/* BELOW 1104px */
+@media (max-width: 69em) {
+  .navigation-container {
+    display: none;
+  }
+
+  .logo-header {
+    display: flex;
+    margin: 0 4rem 0 2rem;
+  }
+
+  .hero-section {
+    align-items: center;
+  }
+
+  .movies-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 20rem;
+  }
+
+  .movies-section h1 {
+    align-self: baseline;
+    margin-left: 14rem;
+  }
+
+  .header {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .burger-menu {
+    display: flex;
+    align-items: center;
+    background-color: var(--black);
+  }
+
+  .burger-menu img {
+    width: 5rem;
+  }
+
+  .search-container {
+    flex-direction: row;
+    gap: 10rem;
+  }
+}
+
+/* BELOW 896px */
+@media (max-width: 56em) {
+}

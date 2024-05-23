@@ -204,3 +204,17 @@ document.addEventListener("DOMContentLoaded", function () {
     displayMovies();
   });
 });
+
+// ///////////// BURGER MENU FUNCTIONALITY FOR MOBILE //////////
+const burgerIcon = document.getElementById("burger-menu");
+const navigation = document.querySelector(".navigation-container");
+
+function toggleNavigation() {
+  if (navigation.style.display === "none") {
+    navigation.style.display = "flex";
+  } else if ((navigation.style.display = "flex")) {
+    navigation.style.display = "none";
+  }
+}
+
+burgerIcon.addEventListener("click", toggleNavigation);
