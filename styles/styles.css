@@ -38,6 +38,24 @@
   position: relative;
 }
 
+.navigation-burger {
+  position: absolute;
+  top: 20rem;
+  left: 9rem;
+  background-color: rgba(33, 36, 45, 0.9);
+  padding: 5rem 2rem;
+  border-radius: 20px;
+  z-index: 100;
+}
+
+.btn-close {
+  position: absolute;
+  top: 2rem;
+  right: 3rem;
+  background-color: transparent;
+  color: white;
+}
+
 .navigation {
   display: flex;
   flex-direction: column;

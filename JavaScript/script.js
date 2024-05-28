@@ -208,13 +208,34 @@ document.addEventListener("DOMContentLoaded", function () {
 // ///////////// BURGER MENU FUNCTIONALITY FOR MOBILE //////////
 const burgerIcon = document.getElementById("burger-menu");
 const navigation = document.querySelector(".navigation-container");
+const logo = document.querySelector(".logo");
+const honeyComb = document.querySelector(".honey-comb-img");
 
 function toggleNavigation() {
   if (navigation.style.display === "none") {
     navigation.style.display = "flex";
+    navigation.classList.add("navigation-burger");
+    honeyComb.classList.add("hidden");
+    logo.classList.add("hidden");
+    logo.classList.remove("logo");
   } else if ((navigation.style.display = "flex")) {
     navigation.style.display = "none";
+    navigation.classList.remove("navigation-burger");
+    honeyComb.classList.remove("hidden");
+    logo.classList.remove("hidden");
+    logo.classList.add("logo");
   }
 }
 
 burgerIcon.addEventListener("click", toggleNavigation);
+
+// Check screen width and reset display property on resize
+window.addEventListener("resize", function () {
+  if (window.innerWidth > 1104) {
+    navigation.style.display = "";
+    navigation.classList.remove("navigation-burger");
+    honeyComb.classList.remove("hidden");
+    logo.classList.remove("hidden");
+    logo.classList.add("logo");
+  }
+});
