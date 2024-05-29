@@ -34,6 +34,11 @@
   .movie {
     max-width: 20rem;
   }
+
+  .top-rated-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 /* BELOW 1104px */
@@ -89,6 +94,20 @@
     top: 25rem;
     left: 45rem;
   }
+
+  .top-rated-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .movie-inner {
+    flex-direction: column;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .movie-inner--info {
+    align-items: center;
+  }
 }
 
 /* BELOW 896px */
@@ -120,6 +139,10 @@
 
   .search-result-list {
     left: 30rem;
+  }
+
+  .top-rated-list {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   footer {
