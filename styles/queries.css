@@ -84,6 +84,11 @@
     flex-direction: row;
     gap: 10rem;
   }
+
+  .search-result-list {
+    top: 25rem;
+    left: 45rem;
+  }
 }
 
 /* BELOW 896px */
@@ -99,6 +104,10 @@
   .top-rated {
     margin: 10rem 6rem 4rem 6rem;
   }
+
+  .search-result-list {
+    left: 37rem;
+  }
 }
 
 /* BELOW 720px */
@@ -107,6 +116,10 @@
   .top-rated-list {
     display: grid;
     grid-template-columns: 1fr 1fr;
+  }
+
+  .search-result-list {
+    left: 30rem;
   }
 
   footer {
@@ -119,6 +132,11 @@
   html {
     /* 7px */
     font-size: 43.7%;
+  }
+
+  .search-result-list {
+    top: 27rem;
+    left: 25rem;
   }
 
   .hero {
@@ -163,6 +181,10 @@
 
   .search-container {
     gap: 5rem;
+  }
+
+  .search-result-list {
+    left: 19rem;
   }
 
   .carousel-img {
