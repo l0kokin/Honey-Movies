@@ -208,26 +208,28 @@ document.addEventListener("DOMContentLoaded", function () {
 // ///////////// BURGER MENU FUNCTIONALITY FOR MOBILE //////////
 const burgerIcon = document.getElementById("burger-menu");
 const navigation = document.querySelector(".navigation-container");
-const logo = document.querySelector(".logo");
-const honeyComb = document.querySelector(".honey-comb-img");
+const closeBtn = document.querySelector(".burger-close");
 
 function toggleNavigation() {
   if (navigation.style.display === "none") {
     navigation.style.display = "flex";
     navigation.classList.add("navigation-burger");
-    honeyComb.classList.add("hidden");
-    logo.classList.add("hidden");
-    logo.classList.remove("logo");
+    closeBtn.classList.remove("hidden");
   } else if ((navigation.style.display = "flex")) {
     navigation.style.display = "none";
     navigation.classList.remove("navigation-burger");
-    honeyComb.classList.remove("hidden");
-    logo.classList.remove("hidden");
-    logo.classList.add("logo");
+    closeBtn.classList.add("hidden");
   }
 }
 
+function closeNav() {
+  navigation.style.display = "none";
+  navigation.classList.remove("navigation-burger");
+  closeBtn.classList.add("hidden");
+}
+
 burgerIcon.addEventListener("click", toggleNavigation);
+closeBtn.addEventListener("click", closeNav);
 
 // Check screen width and reset display property on resize
 window.addEventListener("resize", function () {

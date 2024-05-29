@@ -88,4 +88,84 @@
 
 /* BELOW 896px */
 @media (max-width: 56em) {
+  .header {
+    margin: 6rem 0;
+  }
+
+  .movies-section {
+    margin: 6rem;
+  }
+
+  .top-rated {
+    margin: 10rem 6rem 4rem 6rem;
+  }
+}
+
+/* BELOW 720px */
+@media (max-width: 45em) {
+  .movies,
+  .top-rated-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  footer {
+    margin: 7rem;
+  }
+}
+
+/* BELOW 592px */
+@media (max-width: 37em) {
+  html {
+    /* 7px */
+    font-size: 43.7%;
+  }
+
+  .hero {
+    max-width: 90%;
+  }
+
+  .carousel-img {
+    min-width: 2rem;
+    max-width: 90%;
+    max-height: 50rem;
+  }
+
+  .btn-yellow,
+  .btn-white {
+    padding: 1.4rem;
+  }
+
+  .movies,
+  .top-rated-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .movies-section,
+  .top-rated {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* BELOW 480px */
+@media (max-width: 30em) {
+  .categories ul,
+  .carousel-dots {
+    display: none;
+  }
+
+  .burger-menu {
+    margin: 0 4rem;
+  }
+
+  .search-container {
+    gap: 5rem;
+  }
+
+  .carousel-img {
+    max-width: 100%;
+  }
 }

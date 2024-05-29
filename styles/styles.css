@@ -40,20 +40,18 @@
 
 .navigation-burger {
   position: absolute;
-  top: 20rem;
-  left: 9rem;
-  background-color: rgba(33, 36, 45, 0.9);
-  padding: 5rem 2rem;
-  border-radius: 20px;
-  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  z-index: 1000;
 }
 
-.btn-close {
+.burger-close {
   position: absolute;
-  top: 2rem;
-  right: 3rem;
+  right: 25rem;
   background-color: transparent;
   color: white;
+  font-size: 4rem;
 }
 
 .navigation {
@@ -230,7 +228,6 @@
 
 /* ******** HERO ******** */
 .hero {
-  background-repeat: no-repeat;
   max-width: 77rem;
   overflow: hidden;
   position: relative;
