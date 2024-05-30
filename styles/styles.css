@@ -469,6 +469,10 @@
   line-height: 8.16rem;
 }
 
+.movie-inner--stars {
+  width: 30rem;
+}
+
 .movie-inner--info {
   display: flex;
   flex-direction: column;

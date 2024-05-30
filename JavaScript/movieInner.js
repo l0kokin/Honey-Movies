@@ -18,7 +18,7 @@ function displayMovies(movie) {
   movieCard.classList.add("movie-inner--info");
   movieCard.innerHTML = `
     <h1 class="movie-inner--title">${movie.title}</h1>
-    <img src="../images/Review.png" alt="4.5 star review" width="300px" />
+    <img src="../images/Review.png" alt="4.5 star review" class="movie-inner--stars" />
     <p class="movie-inner--views">${movie.popularity} views</p>
     <img src="../images/imdb logo.png" alt="imdb logo" width="57px" />
     <p class="movie-inner--plot">${movie.overview}</p>
