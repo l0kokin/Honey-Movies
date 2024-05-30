@@ -95,6 +95,14 @@
     left: 45rem;
   }
 
+  .btn-next {
+    right: -6rem;
+  }
+
+  .btn-yellow {
+    right: 2rem;
+  }
+
   .top-rated-list {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -107,6 +115,10 @@
 
   .movie-inner--info {
     align-items: center;
+  }
+
+  .movie-inner--plot {
+    width: 100%;
   }
 }
 
@@ -126,6 +138,10 @@
 
   .search-result-list {
     left: 37rem;
+  }
+
+  .burger-close {
+    right: 10rem;
   }
 }
 
@@ -177,6 +193,10 @@
     padding: 1.4rem;
   }
 
+  .btn-next {
+    right: -1.5rem;
+  }
+
   .movies,
   .top-rated-list {
     display: flex;
@@ -193,6 +213,11 @@
 
 /* BELOW 480px */
 @media (max-width: 30em) {
+  html {
+    /* 6px */
+    font-size: 37.5%;
+  }
+
   .categories ul,
   .carousel-dots {
     display: none;
@@ -207,10 +232,45 @@
   }
 
   .search-result-list {
-    left: 19rem;
+    left: 25rem;
+    top: 29rem;
   }
 
   .carousel-img {
     max-width: 100%;
+  }
+
+  .btn-next {
+    right: -6rem;
+  }
+
+  .header {
+    margin: 6rem;
+  }
+}
+
+/* BELOW 400px */
+@media (max-width: 25em) {
+  .header {
+    margin: 6rem 0;
+  }
+
+  .search-container {
+    gap: 1rem;
+  }
+
+  .search-result-list {
+    left: 14rem;
+    top: 29rem;
+  }
+
+  .carousel-item h1 {
+    top: 2.5rem;
+    left: 2.5rem;
+    font-size: 4.2rem;
+  }
+
+  .top-rated {
+    margin: 1rem;
   }
 }

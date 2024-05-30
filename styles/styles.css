@@ -42,6 +42,8 @@
   position: absolute;
   width: 100vw;
   height: 100vh;
+  margin: 0;
+  padding: 10rem;
   background-color: black;
   z-index: 1000;
 }
